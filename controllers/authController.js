@@ -49,8 +49,10 @@ exports.login = catchAsync(async (req, res, next) => {
   const token = signToken(user._id);
   res.status(200).json({
     status: 'success',
+    name: user.name.split(' ')[0].toLowerCase(),
+    id: user._id,
+    budget: user.budget,
     token,
-    name: user.name,
   });
 });
 

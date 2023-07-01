@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const userRouter = require('./routes/userRouter');
 const expenseRouter = require('./routes/expenseRouter');
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use(express.json());
+app.use(cors());
 
 // 2) ROUTES
 
