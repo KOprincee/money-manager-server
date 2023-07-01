@@ -11,7 +11,6 @@ exports.createExpense = catchAsync(async (req, res) => {
 });
 
 exports.getExpenseById = catchAsync(async (req, res, next) => {
-  console.log(req.params.id);
   const expense = await Expense.find({ user_id: req.params.id });
 
   if (!expense) {
