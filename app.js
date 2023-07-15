@@ -19,8 +19,8 @@ app.use(cors());
 
 // 2) ROUTES
 
-app.use('/money-manager/users', userRouter);
-app.use('/money-manager/expense', expenseRouter);
+app.use('/users', userRouter);
+app.use('/expense', expenseRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
